@@ -1,10 +1,15 @@
-name: 보도자료 일일 수집
+name: 보도자료 5분 간격 수집
 
 on:
   schedule:
-    # 매일 KST 09:10 실행 (UTC 기준 00:10). GitHub Actions cron은 UTC 기준입니다.
-    - cron: "10 0 * * *"
+    # 5분마다 실행. GitHub Actions cron은 UTC 기준이며, 5분이 최소 간격입니다.
+    # 실제로는 트래픽 상황에 따라 수 분 지연될 수 있습니다 (GitHub 측 제약, 스크립트 문제 아님).
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}   # 수동 실행 버튼도 함께 활성화 (Actions 탭에서 Run workflow)
+
+concurrency:
+  group: press-release-collect
+  cancel-in-progress: false   # 이전 실행이 아직 안 끝났으면 이번 실행은 대기(겹쳐서 커밋 충돌 방지)
 
 permissions:
   contents: write
@@ -24,7 +29,7 @@ jobs:
       - name: 의존성 설치
         run: pip install requests beautifulsoup4
 
-      - name: 오늘자 보도자료 수집
+      - name: 신규 보도자료 수집 (증분)
         run: python scripts/collect.py
 
       - name: 변경사항 커밋 & 푸시
@@ -32,5 +37,9 @@ jobs:
           git config user.name "press-release-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet && echo "변경 없음" || git commit -m "chore: 보도자료 자동 수집 $(date -u +'%Y-%m-%d')"
-          git push
+          git diff --cached --quiet && echo "변경 없음" || git commit -m "chore: 보도자료 자동 수집 $(date -u +'%Y-%m-%d %H:%M')"
+          # 5분 간격으로 자주 도는 만큼, 다른 실행이 먼저 push했을 경우를 대비해 재시도
+          for i in 1 2 3; do
+            git pull --rebase && git push && break
+            echo "push 실패, 재시도 ($i)"; sleep 5
+          done
