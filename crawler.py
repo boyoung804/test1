@@ -1,61 +1,69 @@
-import urllib.request
-import re
+@@ -0,0 +1,68 @@
 import datetime
+import json
+import re
+import requests
+from bs4 import BeautifulSoup
 
+# Korea.kr 보도자료 데이터 수집
 url = "https://www.korea.kr/briefing/pressReleaseList.do"
+headers = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    )
+}
 
-req = urllib.request.Request(
-    url, 
-    headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.text, "html.parser")
+
+releases = []
+items = soup.select(".article-list li")
+
+for item in items:
+    title_el = item.select_one(".title a")
+    dept_el = item.select_one(".dept")
+    summary_el = item.select_one(".text")
+
+    if title_el and dept_el:
+        title = title_el.get_text(strip=True)
+        ministry = dept_el.get_text(strip=True)
+        summary = summary_el.get_text(strip=True) if summary_el else ""
+        link_path = title_el.get("href", "")
+        link = (
+            f"https://www.korea.kr{link_path}"
+            if link_path.startswith("/")
+            else url
+        )
+
+        releases.append(
+            {
+                "ministry": ministry,
+                "title": title,
+                "summary": summary,
+                "link": link,
+            }
+        )
+
+# index.html 파일 읽기 및 데이터 교체
+with open("index.html", "r", encoding="utf-8") as f:
+    html_content = f.read()
+
+now = datetime.datetime.now()
+today_dot = now.strftime("%Y.%m.%d")
+today_kor = now.strftime("%Y년 %m월 %d일")
+
+html_content = re.sub(r"\d{4}\.\d{2}\.\d{2}", today_dot, html_content)
+html_content = re.sub(r"\d{4}년 \d{1,2}월 \d{1,2}일", today_kor, html_content)
+
+json_data = json.dumps(releases, ensure_ascii=False, indent=2)
+html_content = re.sub(
+    r"const releases = \[.*?\];",
+    f"const releases = {json_data};",
+    html_content,
+    flags=re.DOTALL,
 )
 
-try:
-    html = urllib.request.urlopen(req).read().decode('utf-8')
-    
-    # 게시글 제목과 링크 추출 (정규표현식 사용)
-    pattern = r'<a href="(/briefing/pressReleaseView.do\?newsId=[^"]+)"[^>]*>([^<]+)</a>'
-    matches = re.findall(pattern, html)
-    
-    articles = []
-    for link, title in matches[:15]:
-        clean_title = title.strip()
-        full_link = "https://www.korea.kr" + link
-        if clean_title:
-            articles.append((clean_title, full_link))
-            
-except Exception as e:
-    print(f"Error: {e}")
-    articles = []
-
-now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-html_content = f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정부 보도자료 수집</title>
-</head>
-<body>
-    <h1>대한민국 정부 최신 보도자료</h1>
-    <p>최종 업데이트: {now_str}</p>
-    <ul>
-"""
-
-if articles:
-    for title, link in articles:
-        html_content += f'        <li><a href="{link}" target="_blank">{title}</a></li>\n'
-else:
-    html_content += "        <li>수집된 보도자료가 없습니다.</li>\n"
-
-html_content += """    </ul>
-</body>
-</html>"""
-
-with open('index.html', 'w', encoding='utf-8') as f:
+with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("완료")
+print("업데이트 완료")
