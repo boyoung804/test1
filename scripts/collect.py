@@ -1,13 +1,22 @@
 """
-korea.kr(정책브리핑) 보도자료 일일 수집 스크립트
+korea.kr(정책브리핑) 보도자료 수집 스크립트 (5분 간격 증분 수집)
 --------------------------------------------------
-GitHub Actions에서 매일 자동 실행됩니다 (.github/workflows/daily-collect.yml 참고).
+GitHub Actions에서 5분마다 자동 실행됩니다 (.github/workflows/daily-collect.yml 참고).
 
 동작 방식:
 1. korea.kr 보도자료 목록 페이지를 여러 쪽 가져온다.
 2. 감시 대상 기관(AGENCIES) 목록에 포함된 기관의, 오늘 날짜 보도자료만 골라낸다.
-3. data/YYYY-MM-DD.json 으로 저장하고, data/latest.json 도 같이 갱신한다.
-4. data/dates.json 에 "지금까지 수집된 날짜 목록"을 갱신한다.
+3. 오늘자 기존 저장 파일(data/YYYY-MM-DD.json)을 불러와서, 이미 저장된 링크(newsId)는
+   건너뛰고 새로 올라온 기사만 앞쪽에 병합한다. → 5분마다 돌아도 서버에 큰 부담 없이
+   새 기사를 놓치지 않고 누적할 수 있다.
+4. data/YYYY-MM-DD.json 으로 저장하고, data/latest.json 도 같이 갱신한다.
+5. data/dates.json 에 "지금까지 수집된 날짜 목록"을 갱신한다.
+
+5분 간격 관련 주의:
+- 매 실행마다 여전히 최대 MAX_PAGES 페이지까지 훑지만, 이미 저장된 기사를 만나는
+  페이지에서 조기 종료하므로(EARLY_STOP_ON_SEEN) 실제 요청 수는 대부분 1~2페이지로 끝난다.
+- 자정 근처(날짜가 바뀌는 시점)에는 전날 항목이 여전히 목록 앞쪽에 섞여 나올 수 있어
+  약간의 페이지를 더 훑을 수 있다.
 
 주의:
 - 이 스크립트는 korea.kr의 현재 HTML 구조를 기준으로 작성되었습니다.
@@ -51,8 +60,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PressReleaseTracker/1.0; +https://github.com/)"
 }
 
-MAX_PAGES = 15          # 하루 수집을 위해 넘겨볼 최대 페이지 수 (과도한 요청 방지)
+MAX_PAGES = 15          # 한 번 실행에서 넘겨볼 최대 페이지 수 (과도한 요청 방지, 안전장치)
 REQUEST_DELAY_SEC = 0.6  # 요청 간 최소 대기시간 (서버 부담 완화)
+EARLY_STOP_ON_SEEN = True  # 이미 저장된 기사를 만나면 그 즉시 스캔 중단 (증분 수집 최적화)
 
 
 def today_str():
@@ -103,7 +113,15 @@ def parse_items(html: str):
     return items
 
 
-def collect_for_date(target_date: str):
+def collect_for_date(target_date: str, known_links=None):
+    """target_date 기준 보도자료를 수집한다.
+
+    known_links가 주어지면(직전 실행까지 이미 저장된 링크 집합), 목록을 최신순으로
+    훑다가 이미 알고 있는 링크를 만나는 순간 그 뒤는 전부 이전에 수집한 범위이므로
+    더 넘길 필요가 없어 그 자리에서 멈춘다. 이 덕분에 5분마다 실행해도 대부분
+    1~2페이지만 요청하고 끝난다.
+    """
+    known_links = known_links or set()
     collected = []
     seen_ids = set()
 
@@ -124,6 +142,11 @@ def collect_for_date(target_date: str):
             if key in seen_ids:
                 continue
             seen_ids.add(key)
+
+            if key in known_links:
+                # 이전 실행에서 이미 저장한 기사에 도달 = 그 이후(더 과거)는 다 아는 내용.
+                stop = True
+                continue
 
             if it["date"] < target_date:
                 # 최신순 정렬이 유지된다는 전제 하에, 목표 날짜보다 과거 항목이
@@ -156,11 +179,29 @@ def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     target_date = today_str()
 
-    print(f"[수집 시작] {target_date}")
-    items = collect_for_date(target_date)
-    print(f"[수집 완료] {len(items)}건 (감시 대상 {len(AGENCIES)}개 기관 기준)")
-
     day_path = DATA_DIR / f"{target_date}.json"
+    existing_items = load_json(day_path, [])
+    known_links = {it["link"] for it in existing_items}
+
+    print(f"[수집 시작] {target_date} (기존 저장 {len(existing_items)}건, known_links={len(known_links)})")
+    new_items = collect_for_date(target_date, known_links=known_links)
+    print(f"[신규 발견] {len(new_items)}건 (감시 대상 {len(AGENCIES)}개 기관 기준)")
+
+    # 새 기사를 앞쪽(최신순)에 붙이고, 링크 기준으로 중복 제거.
+    merged = []
+    merged_seen = set()
+    for it in new_items + existing_items:
+        if it["link"] in merged_seen:
+            continue
+        merged_seen.add(it["link"])
+        merged.append(it)
+
+    items = merged
+    if new_items:
+        print(f"[병합 완료] 총 {len(items)}건 (신규 {len(new_items)}건 추가)")
+    else:
+        print(f"[변경 없음] 총 {len(items)}건 (신규 기사 없음)")
+
     day_path.write_text(
         json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8"
     )
