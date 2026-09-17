@@ -1,68 +1,67 @@
-import datetime
-import json
+import urllib.request
 import re
-import requests
-from bs4 import BeautifulSoup
+import datetime
 
-# Korea.kr 보도자료 데이터 수집
 url = "https://www.korea.kr/briefing/pressReleaseList.do"
+
+# 헤더 설정으로 접속 차단 방지
 headers = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-    )
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 }
 
-response = requests.get(url, headers=headers)
-soup = BeautifulSoup(response.text, "html.parser")
+req = urllib.request.Request(url, headers=headers)
+articles = []
 
-releases = []
-items = soup.select(".article-list li")
+try:
+    html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8')
+    
+    # <a> 태그 내 링크 및 제목 패턴
+    pattern = r'<a href="(/briefing/pressReleaseView\.do\?newsId=[^"]+)"[^>]*>(.*?)</a>'
+    matches = re.findall(pattern, html, re.DOTALL)
+    
+    for link, title in matches:
+        # HTML 태그 제거 및 공백 정리
+        clean_title = re.sub(r'<[^>]+>', '', title).strip()
+        full_link = "https://www.korea.kr" + link
+        if clean_title and len(clean_title) > 2:
+            articles.append((clean_title, full_link))
+            
+    # 중복 제거 (순서 유지)
+    seen = set()
+    articles = [x for x in articles if not (x[0] in seen or seen.add(x[0]))][:15]
 
-for item in items:
-    title_el = item.select_one(".title a")
-    dept_el = item.select_one(".dept")
-    summary_el = item.select_one(".text")
+except Exception as e:
+    print(f"크롤링 중 에러 발생: {e}")
 
-    if title_el and dept_el:
-        title = title_el.get_text(strip=True)
-        ministry = dept_el.get_text(strip=True)
-        summary = summary_el.get_text(strip=True) if summary_el else ""
-        link_path = title_el.get("href", "")
-        link = (
-            f"https://www.korea.kr{link_path}"
-            if link_path.startswith("/")
-            else url
-        )
+now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        releases.append(
-            {
-                "ministry": ministry,
-                "title": title,
-                "summary": summary,
-                "link": link,
-            }
-        )
+html_content = f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정부 보도자료 수집</title>
+</head>
+<body>
+    <h1>대한민국 정부 최신 보도자료</h1>
+    <p>최종 업데이트: {now_str}</p>
+    <ul>
+"""
 
-# index.html 파일 읽기 및 데이터 교체
-with open("index.html", "r", encoding="utf-8") as f:
-    html_content = f.read()
+if articles:
+    for title, link in articles:
+        html_content += f'        <li><a href="{link}" target="_blank">{title}</a></li>\n'
+else:
+    html_content += "        <li>현재 수집된 보도자료가 없거나 접속이 지연되고 있습니다.</li>\n"
 
-now = datetime.datetime.now()
-today_dot = now.strftime("%Y.%m.%d")
-today_kor = now.strftime("%Y년 %m월 %d일")
+html_content += """    </ul>
+</body>
+</html>"""
 
-html_content = re.sub(r"\d{4}\.\d{2}\.\d{2}", today_dot, html_content)
-html_content = re.sub(r"\d{4}년 \d{1,2}월 \d{1,2}일", today_kor, html_content)
-
-json_data = json.dumps(releases, ensure_ascii=False, indent=2)
-html_content = re.sub(
-    r"const releases = \[.*?\];",
-    f"const releases = {json_data};",
-    html_content,
-    flags=re.DOTALL,
-)
-
-with open("index.html", "w", encoding="utf-8") as f:
+with open('index.html', 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print("업데이트 완료")
+print("작업 완료")
