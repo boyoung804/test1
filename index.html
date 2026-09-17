@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>중앙부처 보도자료 큐레이션 - 2026.09.17</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --border: #e2e4e8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --accent: #2563eb;
+    --accent-bg: #eff6ff;
+    --highlight-bg: #fef08a;
+    --danger: #dc2626;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 0 0 60px;
+  }
+  header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-inner { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 19px; font-weight: 600; margin: 0 0 4px; }
+  .meta { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+
+  .watch-panel {
+    background: var(--accent-bg);
+    border: 1px solid #bfdbfe;
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .watch-panel-title { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin: 0 0 8px; }
+  .watch-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .watch-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 6px 5px 12px;
+    font-size: 13px; cursor: pointer; transition: border-color 0.15s;
+  }
+  .watch-tag:hover { border-color: var(--accent); }
+  .watch-tag.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .watch-tag .count {
+    font-weight: 700; background: var(--accent-bg); color: var(--accent);
+    border-radius: 999px; padding: 1px 7px; font-size: 12px; min-width: 18px; text-align: center;
+  }
+  .watch-tag.active .count { background: rgba(255,255,255,0.25); color: white; }
+  .watch-tag.zero .count { background: #f1f1f1; color: var(--text-secondary); }
+  .watch-tag-remove { color: var(--text-secondary); font-size: 15px; line-height: 1; padding: 2px 4px; border-radius: 50%; }
+  .watch-tag-remove:hover { background: #fee2e2; color: var(--danger); }
+  .watch-add { display: flex; gap: 6px; }
+  .watch-add input {
+    flex: 1; padding: 7px 10px; border: 1px solid var(--border);
+    border-radius: var(--radius); font-size: 13px; outline: none;
+  }
+  .watch-add button {
+    padding: 7px 14px; border: none; background: var(--accent); color: white;
+    border-radius: var(--radius); font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;
+  }
+  .watch-add button:hover { opacity: 0.9; }
+  .watch-empty { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; }
+  #search-input {
+    flex: 1; min-width: 160px; padding: 10px 14px;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    font-size: 15px; outline: none;
+  }
+  #search-input:focus { border-color: var(--accent); }
+  #ministry-select { padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background: white; }
+  .toggle-line { margin-top: 10px; font-size: 12.5px; color: var(--text-secondary); }
+  .toggle-line label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 16px; }
+  #result-count {
+    font-size: 13px; color: var(--text-secondary); margin: 4px 4px 12px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #clear-filter-btn {
+    font-size: 12px; color: var(--accent); background: none; border: none;
+    cursor: pointer; text-decoration: underline; padding: 0; display: none;
+  }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 16px 18px; margin-bottom: 12px; text-decoration: none; color: inherit;
+    display: block; transition: box-shadow 0.15s;
+  }
+  .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-color: var(--accent); }
+  .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .badge {
+    font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-bg);
+    padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .card-date { font-size: 12px; color: var(--text-secondary); }
+  .card-title { font-size: 16px; font-weight: 600; margin: 0 0 6px; }
+  .card-summary {
+    font-size: 14px; color: var(--text-secondary); margin: 0;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .card-flag { font-size: 11.5px; color: var(--danger); margin-top: 6px; }
+  mark { background: var(--highlight-bg); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+  .zero-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; background: var(--card-bg); border: 1px dashed var(--border);
+    border-radius: var(--radius); margin-bottom: 8px; font-size: 13px; color: var(--text-secondary);
+  }
+  .zero-row .zn { font-weight: 600; color: var(--text-primary); }
+  .zero-row .zc { font-size: 12px; color: var(--text-secondary); }
+  #zero-section { margin-top: 18px; }
+  #zero-section summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 14px; }
+  footer {
+    max-width: 720px; margin: 24px auto 0; padding: 0 16px;
+    font-size: 12px; color: var(--text-secondary); text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>중앙부처 보도자료 큐레이션</h1>
+    <div class="meta">2026년 9월 17일 (목) · 19개 부처+대통령실 대상, 기관별 대표 보도자료 선별 · 수집 시각 13:47 기준 · 총 <span id="total-count">0</span>건 · 감시 대상 기관 <span id="agency-count">0</span>곳</div>
+
+    <div class="watch-panel">
+      <p class="watch-panel-title">관심 키워드 감시</p>
+      <div id="watch-empty" class="watch-empty" style="display:none;">등록된 키워드가 없습니다. 아래에서 추가해보세요 (예: 저작권, AI, 예산).</div>
+      <div id="watch-tags" class="watch-tags"></div>
+      <div class="watch-add">
+        <input type="text" id="watch-input" placeholder="새 키워드 추가 후 Enter" autocomplete="off">
+        <button id="watch-add-btn">추가</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="키워드 입력 (예: 저작권, AI, 예산)" autocomplete="off">
+      <select id="ministry-select"><option value="">전체 부처</option></select>
+    </div>
+    <div class="toggle-line">
+      <label><input type="checkbox" id="hide-zero" checked> 오늘 자료 없는 기관 목록 숨기기</label>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="result-count">
+    <span id="result-count-text"></span>
+    <button id="clear-filter-btn">필터 초기화</button>
+  </div>
+  <div id="results"></div>
+
+  <details id="zero-section">
+    <summary>오늘 자료가 없는 기관 보기</summary>
+    <div id="zero-list"></div>
+  </details>
+</main>
+
+<footer>
+  이 페이지는 2026.09.17 정책브리핑(korea.kr) 원문을 기반으로, 19개 부처·처와 대통령실의 <strong>대표 보도자료를 선별</strong>해 구성한 큐레이션입니다.<br>
+  전체 원문 링크는 각 카드를 클릭해 확인할 수 있으며, ※ 표시 항목은 원문 링크 확보 전이라 목록 페이지로 연결됩니다.<br>
+  이 파일은 완전히 독립적으로 동작하며 별도 서버·인터넷 연결 없이 열람할 수 있습니다. 관심 키워드 설정은 이 브라우저에만 저장됩니다.
+</footer>
+
+<script>
+  /* 감시 대상 기관: 대통령실 + 19개 부·처. 여기만 고치면 목록이 바뀝니다. */
+  const ALL_AGENCIES = [
+    "대통령실",
+    "국무조정실",
+    "재정경제부",
+    "교육부",
+    "과학기술정보통신부",
+    "외교부",
+    "통일부",
+    "법무부",
+    "국방부",
+    "행정안전부",
+    "국가보훈부",
+    "문화체육관광부",
+    "농림축산식품부",
+    "산업통상부",
+    "보건복지부",
+    "기후에너지환경부",
+    "고용노동부",
+    "성평등가족부",
+    "국토교통부",
+    "해양수산부",
+    "중소벤처기업부",
+    "국가데이터처",
+    "인사혁신처",
+    "법제처",
+    "식품의약품안전처"
+  ];
+
+  const LIST_FALLBACK = "https://www.korea.kr/briefing/pressReleaseList.do";
+
+  const releases = [
+    { ministry: "국무조정실", title: "[보도자료] 생명지킴추진본부, 서울지역 천명지킴 현장소통 간담회 개최", summary: "범정부 생명지킴추진본부는 9.17일 서울특별시를 방문해 지역 유관기관들과 함께 자살예방 대응체계 및 추진 현황을 확인하고 현장 목소리를 청취했다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782154" },
+    { ministry: "보건복지부", title: "\"오늘도 바리스타로 활약합니다\" 커피 한 잔에 담긴 중증장애인 일자리 10년의 변화", summary: "보건복지부와 한국장애인개발원은 장애인카페(아이갓에브리씽) 10주년 기념행사를 열고, 2027년 장애인일자리를 35,846명에서 38,446명으로 확대하는 등 지원 강화 계획을 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782158" },
+    { ministry: "교육부", title: "한-중앙아시아, 교육협력의 지평을 넓힌다", summary: "교육부가 9월 17일 발표한 보도자료로, 한-중앙아시아 교육협력 확대와 관련된 내용을 담고 있다. (요약 정보 제한 — 원문 확인 권장)", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782138" },
+    { ministry: "교육부", title: "'2026 에듀테크 코리아 페어', 9월 17일부터 3일간 코엑스에서 개최", summary: "교육부와 산업통상부는 9월 17일부터 19일까지 코엑스에서 국내외 300여개 기업이 참여하는 에듀테크 코리아 페어를 개최한다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "과학기술정보통신부", title: "「AI를 일상에서 한글·산수처럼」 전국민 AI 역량 강화 정책, 국민이 직접 이름 짓는다", summary: "과기정통부는 전국민 AI 역량 강화 정책의 브랜드를 국민 공모전으로 선정한다고 밝혔다. 9.17~9.30 접수, 전문가 심사 후 대국민 투표로 최종 결정.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782130" },
+    { ministry: "과학기술정보통신부", title: "인공지능으로 전세사기 위험 미리 진단한다", summary: "과기정통부와 경기도는 AI 데이터 분석과 공인중개사 현장 확인을 결합해 전세계약 위험을 사전 진단하는 '경기 안심 부동산(GRTS)' 출시 행사를 개최했다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "인사혁신처", title: "공무원 '난임 휴직' 운영기준 등 마련, 12월 시행", summary: "인사혁신처와 행정안전부는 공무원임용령 개정안을 입법예고했다. 난임 치료가 필요한 공무원은 12월 3일부터 별도의 난임 휴직을 신청할 수 있다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782133" },
+    { ministry: "국가데이터처", title: "2024년 국민이전계정", summary: "2024년 소비는 1,509.8조원, 노동소득은 1,289.7조원으로 총 220.1조원의 생애주기적자가 발생했다고 국가데이터처가 발표했다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782137" },
+    { ministry: "기후에너지환경부", title: "건설부터 해체까지 케이(K)-원전 전주기 역량 높인다", summary: "기후에너지환경부는 9월 18일 원전해체 국제 경쟁력 강화 협의회와 비즈니스 포럼을 개최해 국내외 해체 경험을 공유한다고 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782135" },
+    { ministry: "기후에너지환경부", title: "추석 연휴 환경오염 예방에 총력… 전국 집중 단속 돌입", summary: "기후에너지환경부는 9월 18일부터 10월 8일까지 추석 연휴 환경오염 특별 감시·단속 및 홍보 활동을 추진한다고 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782136" },
+    { ministry: "기후에너지환경부", title: "(참고) 이호현 제2차관, 초고압차단기 미국 첫 생산 앞서 효성중공업 현지 합작법인 방문", summary: "기후에너지환경부 이호현 제2차관이 미국 펜실베이니아주의 효성중공업 초고압차단기 합작법인을 방문해 현지 생산 현황을 확인했다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782163" },
+    { ministry: "기후에너지환경부", title: "국립호남권생물자원관, 삼성전자와 함께 생물다양성 탐사 나서", summary: "국립호남권생물자원관은 삼성전자 임직원과 생물다양성 탐사 활동을 진행하며, 9월 17일 광주 사업장 일대에서 탐사를 이어간다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "행정안전부", title: "지역에 활력을, 경제에 온기를! '2026년 지역경제 혁신박람회' 개최", summary: "행정안전부는 9월 17일~18일 강릉올림픽파크에서 지방공공기관의 날과 연계한 지역경제 혁신박람회를 개최한다고 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782151" },
+    { ministry: "행정안전부", title: "공무원 '난임 휴직' 운영기준 등 마련, 12월 시행", summary: "행정안전부와 인사혁신처는 공무원임용령·지방공무원임용령 개정안을 입법예고했다. 난임 휴직 제도가 12월 3일부터 시행된다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782144" },
+    { ministry: "행정안전부", title: "'2026 고향사랑페스타' 개최, 전국 답례품 만나고, 현장 기부까지", summary: "행정안전부는 SBS와 함께 9월 19~20일 서울 양재 aT센터에서 2026년 고향사랑페스타를 개최한다고 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782142" },
+    { ministry: "행정안전부", title: "부처 간 칸막이는 허물고, 데이터는 막힘없이 「범정부 데이터 파이프라인」 개통", summary: "행정안전부는 중앙부처·지방정부·공공기관 데이터를 연결하는 범정부 데이터 파이프라인을 구축해 9월 18일부터 시범운영에 들어간다고 밝혔다.", link: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782140" },
+    { ministry: "행정안전부", title: "햇빛소득마을, 3차 공모로 전국 확산 이어간다", summary: "행정안전부는 9월 17일부터 10월 30일까지 2026년 햇빛소득마을 3차 공모를 실시해 참여 마을을 추가 모집하고 12월 말 최종 선정할 계획이다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "해양수산부", title: "섬의 숨결을 느끼며 가치를 발견하는 '무인도 LIVE 국민탐사단'이 간다!", summary: "해양수산부는 9월 17일부터 20일까지 경남 거제·통영 일원에서 무인도서의 가치를 체험하는 국민탐사단을 운영한다. 1,434명 지원자 중 30명을 선발했다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "재정경제부", title: "확대 거시경제금융회의 개최", summary: "구윤철 부총리 겸 재정경제부 장관은 9월 17일 08:00 정부서울청사에서 관계기관 합동 확대거시경제금융회의를 열어 미국 FOMC 결정과 중동 정세에 따른 금융·외환시장 동향을 점검했다.", link: LIST_FALLBACK, unverified: true },
+    { ministry: "기타(한국저작권위원회)", title: "한국저작권위원회, 2026 국민공감대상 경영혁신 기관 선정", summary: "한국저작권위원회는 9월 17일 서울 더플라자호텔에서 열린 '2026 국민공감대상' 시상식에서 경영혁신부문 수상과 동반성장위원회 위원장 표창을 받았다고 밝혔다.", link: LIST_FALLBACK, unverified: true }
+  ];
+
+  const STORAGE_KEY = 'pr_watch_keywords_v1';
+  const DEFAULT_KEYWORDS = ["저작권", "AI", "예산"];
+
+  function loadWatchKeywords() {
+    try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) return JSON.parse(raw); } catch (e) {}
+    return DEFAULT_KEYWORDS.slice();
+  }
+  function saveWatchKeywords(list) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch (e) {}
+  }
+
+  let watchKeywords = loadWatchKeywords();
+  let activeWatchKeyword = null;
+
+  const searchInput = document.getElementById('search-input');
+  const ministrySelect = document.getElementById('ministry-select');
+  const resultsEl = document.getElementById('results');
+  const resultCountTextEl = document.getElementById('result-count-text');
+  const clearFilterBtn = document.getElementById('clear-filter-btn');
+  const totalCountEl = document.getElementById('total-count');
+  const agencyCountEl = document.getElementById('agency-count');
+  const watchTagsEl = document.getElementById('watch-tags');
+  const watchEmptyEl = document.getElementById('watch-empty');
+  const watchInput = document.getElementById('watch-input');
+  const watchAddBtn = document.getElementById('watch-add-btn');
+  const hideZeroEl = document.getElementById('hide-zero');
+  const zeroSection = document.getElementById('zero-section');
+  const zeroListEl = document.getElementById('zero-list');
+
+  totalCountEl.textContent = releases.length;
+  agencyCountEl.textContent = ALL_AGENCIES.length;
+
+  // 드롭다운: 자료 유무 상관없이 감시 대상 기관 전부 표시
+  ALL_AGENCIES.forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m; opt.textContent = m;
+    ministrySelect.appendChild(opt);
+  });
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+  function highlight(text, query) {
+    if (!query) return escapeHtml(text);
+    const escaped = escapeHtml(text);
+    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp('(' + escapedQuery + ')', 'gi');
+    return escaped.replace(re, '<mark>$1</mark>');
+  }
+  function countMatches(keyword) {
+    return releases.filter(r => r.title.includes(keyword) || r.summary.includes(keyword) || r.ministry.includes(keyword)).length;
+  }
+
+  function renderWatchTags() {
+    watchEmptyEl.style.display = watchKeywords.length === 0 ? 'block' : 'none';
+    watchTagsEl.innerHTML = watchKeywords.map(kw => {
+      const count = countMatches(kw);
+      const isActive = activeWatchKeyword === kw;
+      const zeroClass = count === 0 ? ' zero' : '';
+      return `
+        <span class="watch-tag${isActive ? ' active' : ''}${zeroClass}" data-kw="${escapeHtml(kw)}">
+          <span class="tag-label">${escapeHtml(kw)}</span>
+          <span class="count">${count}</span>
+          <span class="watch-tag-remove" data-remove="${escapeHtml(kw)}" title="삭제">✕</span>
+        </span>`;
+    }).join('');
+
+    watchTagsEl.querySelectorAll('.watch-tag').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (e.target.classList.contains('watch-tag-remove')) return;
+        const kw = el.dataset.kw;
+        if (activeWatchKeyword === kw) { activeWatchKeyword = null; searchInput.value = ''; }
+        else { activeWatchKeyword = kw; searchInput.value = kw; }
+        render();
+      });
+    });
+    watchTagsEl.querySelectorAll('.watch-tag-remove').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const kw = el.dataset.remove;
+        watchKeywords = watchKeywords.filter(k => k !== kw);
+        saveWatchKeywords(watchKeywords);
+        if (activeWatchKeyword === kw) { activeWatchKeyword = null; searchInput.value = ''; }
+        renderWatchTags(); render();
+      });
+    });
+  }
+
+  function addWatchKeyword() {
+    const val = watchInput.value.trim();
+    if (!val) return;
+    if (watchKeywords.includes(val)) { watchInput.value = ''; return; }
+    watchKeywords.push(val);
+    saveWatchKeywords(watchKeywords);
+    watchInput.value = '';
+    renderWatchTags();
+  }
+  watchAddBtn.addEventListener('click', addWatchKeyword);
+  watchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addWatchKeyword(); });
+
+  function render() {
+    const query = searchInput.value.trim();
+    const ministryFilter = ministrySelect.value;
+
+    const filtered = releases.filter(r => {
+      const matchesMinistry = !ministryFilter || r.ministry === ministryFilter;
+      const matchesQuery = !query || r.title.includes(query) || r.summary.includes(query) || r.ministry.includes(query);
+      return matchesMinistry && matchesQuery;
+    });
+
+    resultCountTextEl.textContent = query || ministryFilter
+      ? filtered.length + '건 검색됨'
+      : '전체 ' + filtered.length + '건';
+    clearFilterBtn.style.display = (query || ministryFilter) ? 'inline' : 'none';
+
+    if (filtered.length === 0) {
+      resultsEl.innerHTML = '<div class="empty-state">검색 결과가 없습니다.</div>';
+    } else {
+      resultsEl.innerHTML = filtered.map(r => `
+        <a class="card" href="${escapeHtml(r.link)}" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="badge">${escapeHtml(r.ministry)}</span>
+            <span class="card-date">2026.09.17</span>
+          </div>
+          <p class="card-title">${highlight(r.title, query)}</p>
+          <p class="card-summary">${highlight(r.summary, query)}</p>
+          ${r.unverified ? '<p class="card-flag">※ 원문 링크 미확보 — 목록 페이지로 연결</p>' : ''}
+        </a>`).join('');
+    }
+
+    // 오늘 자료 0건인 기관 목록
+    const haveData = new Set(releases.map(r => r.ministry));
+    const zeroAgencies = ALL_AGENCIES.filter(a => !haveData.has(a));
+    if (ministryFilter && !zeroAgencies.includes(ministryFilter)) {
+      zeroSection.style.display = 'none';
+    } else {
+      zeroSection.style.display = zeroAgencies.length ? 'block' : 'none';
+      const list = ministryFilter ? zeroAgencies.filter(a => a === ministryFilter) : zeroAgencies;
+      zeroListEl.innerHTML = list.map(a => `
+        <div class="zero-row"><span class="zn">${escapeHtml(a)}</span><span class="zc">0건 · 오늘 자료 미확인</span></div>
+      `).join('');
+      zeroSection.open = !!ministryFilter && zeroAgencies.includes(ministryFilter);
+    }
+    if (hideZeroEl.checked && !ministryFilter) zeroSection.style.display = 'none';
+
+    if (activeWatchKeyword && searchInput.value.trim() !== activeWatchKeyword) {
+      activeWatchKeyword = null;
+      renderWatchTags();
+    }
+  }
+
+  searchInput.addEventListener('input', render);
+  ministrySelect.addEventListener('change', render);
+  hideZeroEl.addEventListener('change', render);
+  clearFilterBtn.addEventListener('click', () => {
+    searchInput.value = ''; ministrySelect.value = '';
+    activeWatchKeyword = null; renderWatchTags(); render();
+  });
+
+  renderWatchTags();
+  render();
+</script>
+
+</body>
+</html>
