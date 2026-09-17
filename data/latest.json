@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "collected_at": "2026-09-18T03:22:16.639124+09:00",
+  "collected_at": "2026-09-18T03:41:30.362950+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -28,5 +28,14 @@
     "법제처",
     "식품의약품안전처"
   ],
-  "items": []
+  "items": [
+    {
+      "date": "2026-09-18",
+      "agency": "과학기술정보통신부",
+      "title": "자폐의 유전적 다양성, 두 갈래 '분자 지도'로 정리 - IBS･KISTI, 다양한 자폐 위험 유전자 변이의 두 가지 공통 분자 패턴 최초 규명- 개별 유전자에서 통합 정밀의학으로 자폐 연구 패러다임 전환, Science誌 게재연구현장 스케치 영상https://drive.google.com/file/d/1mhcZh6TWqb-GGDkCLIXqon1Ur-X5O",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782342",
+      "unverified": false
+    }
+  ]
 }
