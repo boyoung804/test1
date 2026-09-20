@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "collected_at": "2026-09-21T07:55:58.184528+09:00",
+  "collected_at": "2026-09-21T08:14:11.103133+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,30 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-21",
+      "agency": "식품의약품안전처",
+      "title": "[보도참고] 식약처, '화장품 GMP 전문가 양성 교육' 실시 [보도참고] 식약처, '화장품 GMP 전문가 양성 교육' 실시",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782578",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-21",
+      "agency": "식품의약품안전처",
+      "title": "[보도참고] 추석 명절 건강한 식생활을 위한 식품안전나라 '한입 퀴즈' 이벤트 개최 (보도참고) 추석 명절 건강한 식생활을 위한 식품안전나라 '한입 퀴즈' 이벤트 개최",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782577",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-21",
+      "agency": "식품의약품안전처",
+      "title": "식약처, 추석 명절 안전한 장보기·음식 보관 수칙 안내 식약처, 추석 명절 안전한 장보기·음식 보관 수칙 안내",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782576",
+      "unverified": false
+    },
     {
       "date": "2026-09-21",
       "agency": "중소벤처기업부",
