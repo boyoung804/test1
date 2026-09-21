@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "collected_at": "2026-09-21T13:35:22.523330+09:00",
+  "collected_at": "2026-09-21T13:51:27.747549+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-21",
+      "agency": "과학기술정보통신부",
+      "title": "국립과천과학관에서 즐기는",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782689",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-21",
+      "agency": "행정안전부",
+      "title": "기업과 지역이 함께 푸는 지역사회 문제… '아이디어 솔버톤 대회' 개최 - 9월 21일(월) 서울 코엑스에서 지역사회 문제해결 아이디어 솔버톤 대회 개최- 롯데카드, 카카오 등 기업 연계 5개 우수 아이디어 최종 선정- 「사회적가치 페스타」 연계 부스 운영… 지방정부·기업 협업 우수사례 소개",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782688",
+      "unverified": false
+    },
     {
       "date": "2026-09-21",
       "agency": "국무조정실",
