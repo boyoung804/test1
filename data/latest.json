@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "collected_at": "2026-09-21T09:56:33.140397+09:00",
+  "collected_at": "2026-09-21T10:15:27.561341+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-21",
+      "agency": "국무조정실",
+      "title": "[보도자료] 사회대개혁위원회",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782633",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-21",
+      "agency": "외교부",
+      "title": "조현 외교장관,",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782631",
+      "unverified": false
+    },
     {
       "date": "2026-09-21",
       "agency": "농림축산식품부",
