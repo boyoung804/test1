@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "collected_at": "2026-09-23T15:31:12.210348+09:00",
+  "collected_at": "2026-09-23T15:51:01.294819+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-23",
+      "agency": "농림축산식품부",
+      "title": "김종구 차관, 한가위를 앞두고",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783133",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-23",
+      "agency": "보건복지부",
+      "title": "추석 앞두고 서울요양원 찾아 어르신 돌봄 살피고 현장 격려 추석 앞두고 서울요양원 찾아 어르신 돌봄 살피고 현장 격려- 정은경 장관, 건강보험공단 직영 서울요양원 현장방문 -- 장기요양서비스 질 향상 위한 운영 현황 점검과 제도 발전 방향 논의 - 정은경 보건복지부 장관은 9월 23일(수) 13시, 추석 명절을 맞아 서울요양원(서울 강남구 소재)을 방문하여",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783136",
+      "unverified": false
+    },
     {
       "date": "2026-09-23",
       "agency": "농림축산식품부",
