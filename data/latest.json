@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "collected_at": "2026-09-28T10:22:17.962072+09:00",
+  "collected_at": "2026-09-28T10:39:16.280035+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,38 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-28",
+      "agency": "고용노동부",
+      "title": "\"사업주는 갖추고, 노동자는 지키고\"",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783277",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-28",
+      "agency": "고용노동부",
+      "title": "가을철 공장·축사 등 지붕·태양광 공사 집중점검기간(9.28.~10.27.) 운영, '지붕·태양광 공사 추락주의보' 전파! - 캠페인 및 대대적 현장점검 실시고용노동부(장관 김영훈)는 최근 지붕 보수 및 철거공사에서 사망사고가 연이어 발생하였고, 가을철에 접어들며 지붕 보수 및 태양광 설치공사가 증가할 것으로 예상됨에 따라 지붕·태양광 공사 추락 위험에 대",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783276",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-28",
+      "agency": "고용노동부",
+      "title": "구직역량 탐색에서 면접 준비까지",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783275",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-28",
+      "agency": "보건복지부",
+      "title": "유럽서 커지는 K-뷰티, 현지 진출길 넓힌다 이탈리아·독일·프랑스에 체험·판매장 순차 개소 유럽서 커지는 K-뷰티, 현지 진출길 넓힌다 이탈리아·독일·프랑스에 체험·판매장 순차 개소- 시장 탐색부터 유통망 확보까지 중소 화장품 기업 단계별 지원 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783269",
+      "unverified": false
+    },
     {
       "date": "2026-09-28",
       "agency": "과학기술정보통신부",
