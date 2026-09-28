@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "collected_at": "2026-09-28T08:56:45.092946+09:00",
+  "collected_at": "2026-09-28T09:26:13.298924+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-28",
+      "agency": "산업통상부",
+      "title": "(참고자료)북미 공급망 핵심축 멕시코와 손잡다,",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783237",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-28",
+      "agency": "산업통상부",
+      "title": "한-아세안 자유무역협정(FTA) 개선 제2차 공식 협상 개최 한-아세안 자유무역협정(FTA) 개선 제2차 공식 협상 개최- 9.28(월)~10.1(목), 싱가포르 -디지털, 핵심광물, 공급망, 지식재산권 등 총 13개 분야 협상 - 우리나라와 동남아시아국가연합(ASEAN, 이하 '아세안') 간 자유무역협정(이하 '한-아세안 FTA') 개선을 위한 제2차 공",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783236",
+      "unverified": false
+    },
     {
       "date": "2026-09-28",
       "agency": "성평등가족부",
