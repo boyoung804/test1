@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "collected_at": "2026-09-29T15:27:09.910718+09:00",
+  "collected_at": "2026-09-29T15:51:24.949748+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,54 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-29",
+      "agency": "과학기술정보통신부",
+      "title": "대학·청년 연구자를 위한 기초연구 R&D 투자,",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783501",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "국가데이터처",
+      "title": "국가데이터 이용 확대를 위한 마이크로데이터 활용 세미나 개최 국가데이터 이용 확대를 위한 마이크로데이터 활용 세미나 개최※ 자세한 내용은 첨부파일을 참고 바랍니다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783505",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "고용노동부",
+      "title": "제17회 '건설노동자 사진·영상 공모전' 시상식 개최 - 사진·영상 부문 총 17점 선정, 상금 980만 원 및 장관상 등 수여 - 건설노동자의 땀과 일상 담은 작품들로 건설노동자의 가치 조명",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783500",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "고용노동부",
+      "title": "대한민국 미취업 청년을 위한 원스톱 고용서비스 허브 취업 지원 노하우 공유 - 9월 29일부터 3일간 전국 대학일자리플러스센터 관계자들 모여 미취업 청년 발굴, 프로그램 운영 사례 등 공유의 장 마련",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783499",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "고용노동부",
+      "title": "< 한국산업인력공단 - 한국주택금융공사 > '내부통제 고도화 및 감사역량 강화'를 위한 업무협약 체결 - 내부통제체계 고도화 및 감사역량 강화를 위한 상호 협력 추진한국산업인력공단(상임감사 권통일, 이하 '공단')은 한국주택금융공사(상임감사 임수강, 이하 '공사')와 29일 공사 본사(부산 남구)에서 '자체감사기구 간 협력 강화를 위한 감사업무 협약'을 체",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783498",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "고용노동부",
+      "title": "국가자격시험 인공지능(AI) 활용",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783497",
+      "unverified": false
+    },
     {
       "date": "2026-09-29",
       "agency": "보건복지부",
