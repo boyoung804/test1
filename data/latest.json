@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "collected_at": "2026-09-29T12:00:07.059372+09:00",
+  "collected_at": "2026-09-29T12:21:48.872368+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,102 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-29",
+      "agency": "보건복지부",
+      "title": "\"청년의 희망찬 내일을 지원합니다\" 2026년 청년내일저축계좌 24,145명 최종 선정 \"청년의 희망찬 내일을 지원합니다\" 2026년 청년내일저축계좌 24,145명 최종 선정- 올해부터 가입 청년 만기 수령 돕기 위해 납입 일시 정지 기간 2배로 확대 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783452",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "보건복지부",
+      "title": "한 눈에 보는 보건의료인력 현황, 「제2차 보건의료인력 실태조사」 결과 발표 한 눈에 보는 보건의료인력 현황, 「제2차 보건의료인력 실태조사」 결과 발표- 보건의료인력 20개 직종*, 232만명의 활동 현황 및 보수 등 분석 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783453",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "행정안전부",
+      "title": "2026년('25년 기준) 자전거 이용 현황 국가승인통계 발표 - 공영자전거 전년대비 3.4% 증가한 7만 1천여 대 운영- 자전거보험 가입인원수 4천7백만 명으로 전 국민의 약 90%가 혜택- 자전거 교통사고는 전년대비 6% 감소, 안전교육 이수 인원 연간 20만 명 달성",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783467",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "행정안전부",
+      "title": "범정부 AI·데이터행정 협력체계 본격 가동 \"AI·데이터행정을 이끌 책임관 한자리에\" - 행안부, 9월 30일, '제1회 AI·데이터행정 책임관 협의회' 개최- 온AI 확산, 공공데이터 상위 100개 조기 개방 등 주요 현안 공동 대응",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783465",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "행정안전부",
+      "title": "소상공인 가게 운영부터 지역 정착까지 맞춤형 AI 서비스가 돕는다 - 강원, 근로계약·노무상담·정책 지원 연결하는 소상공인 안심경영 서비스 구축- 경북, 주거·돌봄부터 경제활동까지 주민 상황에 맞는 정착 지원정보 통합 안내",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783463",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "해양수산부",
+      "title": "바다가 없는 내륙 지역 최초로 국립청주해양과학관 개관 바다가 없는 내륙 지역 최초로 국립청주해양과학관 개관 - 9월 29일(화) 개관식 이어 30일부터 본격 운영…내륙 주민의 해양 문화 향유 기회 넓혀",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783451",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "교육부",
+      "title": "지역과 인재를 잇는 산학연, '2026 산학연협력 엑스포'에서 미래를 만나다 지역과 인재를 잇는 산학연, '2026 산학연협력 엑스포'에서 미래를 만나다",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783461",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "교육부",
+      "title": "국가 공인 한국어시험 토픽, 2029년 평가 개편 및 인공지능·디지털 기반 체제로 전환 국가 공인 한국어시험 토픽, 2029년 평가 개편 및 인공지능·디지털 기반 체제로 전환",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783460",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "국가데이터처",
+      "title": "2026년 2/4분기 실질 지역내총생산(GRDP) 2026년 2/4분기 실질 지역내총생산(GRDP)□ (시도) 충북, 경기 등 12개 시도의 지역내총생산은 전년동기대비 증가한 반면, 전남, 대전 등 4개 시도는 감소, 제주는 보합·충북(11.9%) : 광업·제조업(22.4%),기타(전기·가스)(9.6%)·경기(5.9%) : 광업·제조업(11.5%),서비스업",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783459",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "국가데이터처",
+      "title": "2025년 농림어업총조사 결과(확정) □ 2025년 12월 1일 현재, 우리나라 농림어가는 127만 6천 가구임",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783458",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "기후에너지환경부",
+      "title": "녹색산업의 새 주역, 우수환경산업체 9개사 선정 ▷ 물·수질, 기후·대기, 자원순환·폐기물 분야 유망 환경기업 9개사 선정기후에너지환경부(장관 김성환)와 한국환경산업기술원(원장 남광우)은 9월 30일 오전 코트야드 메리어트 서울 보타닉파크(서울 강서구 소재)에서 '2026년 우수환경산업체 지정서 수여식'을 개최한다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783457",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "기후에너지환경부",
+      "title": "상괭이 탐사부터 숲속 명상까지… 국립공원 '명품 탐방해설 22선' 공개 ▷ 상괭이 탐사부터 새소리 음악회까지… 생태탐사·치유회복·이색문화로 구성▷ 국립공원 전문 해설사 22인 22색깔로 10월 한 달간 운영기후에너지환경부 산하 국립공원공단(이사장 주대영)은 국립공원의 고유한 자연 자원과 독창적인 체험을 결합한 '국립공원 명품 탐방해설 22선'을 10월 한 ",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783456",
+      "unverified": false
+    },
     {
       "date": "2026-09-29",
       "agency": "산업통상부",
