@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "collected_at": "2026-09-29T13:36:35.403403+09:00",
+  "collected_at": "2026-09-29T13:53:42.044678+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,30 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-29",
+      "agency": "국토교통부",
+      "title": "[참고] 서소문고가 철거공사 붕괴사고, 건설사고조사위원회 조사기간 연장 [참고] 서소문고가 철거공사 붕괴사고, 건설사고조사위원회 조사기간 연장 관련 보도자료 내용입니다. 자세한 내용은 첨부파일을 참고하시기 바랍니다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783478",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "국방부",
+      "title": "국방부-우주항공청, 제3회 미래국방과학기술 정책협의회 우주분과 공동 개최 국방부-우주항공청, 제3회 미래국방과학기술 정책협의회 우주분과 공동 개최□ 국방부와 우주항공청은 9월 29일(화) 서울 국방부 청사에서 제3회 미래국방과학기술 정책협의회 우주분과(이하 '우주분과')를 공동으로 개최하였습니다.ㅇ우주분과는 국방부와 과학기술정보통신부가 2024년에 체결한 ",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783476",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-29",
+      "agency": "고용노동부",
+      "title": "2026년 300인 이상 공시기업의",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783477",
+      "unverified": false
+    },
     {
       "date": "2026-09-29",
       "agency": "기후에너지환경부",
