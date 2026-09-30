@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "collected_at": "2026-09-30T14:32:44.077777+09:00",
+  "collected_at": "2026-09-30T14:50:27.330967+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-09-30",
+      "agency": "고용노동부",
+      "title": "\"지역을 잇다, 중장년을 키우다\" 2026년 중장년 고용강조주간 기념식 개최 - 중장년 고용 우수 개인 5명, 기업 12개소 시상 및 사례 발표 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783743",
+      "unverified": false
+    },
+    {
+      "date": "2026-09-30",
+      "agency": "보건복지부",
+      "title": "각계 전문가 모여 지역 중심 통합돌봄 전달체계와 돌봄 생태계 논의 각계 전문가 모여 지역 중심 통합돌봄 전달체계와 돌봄 생태계 논의- 제4차 지역사회 통합돌봄 포럼 개최 -- 시군구읍면동 전달체계 및 지역사회 돌봄 생태계 조성방안 논의 -【관련 국정과제】 78. 지금 사는 곳에서 누리는 통합돌봄",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783742",
+      "unverified": false
+    },
     {
       "date": "2026-09-30",
       "agency": "국토교통부",
