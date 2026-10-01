@@ -1,6 +1,6 @@
 {
   "date": "2026-10-02",
-  "collected_at": "2026-10-02T08:05:21.108516+09:00",
+  "collected_at": "2026-10-02T08:22:08.348428+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,46 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-02",
+      "agency": "중소벤처기업부",
+      "title": "글로벌 시장에서 K-브랜드 보호를 위한 중기부-지재처 협업 체계 가동 중소벤처기업부(장관 이소영, 이하 중기부)와 지식재산처(처장 김용선, 이하 지재처)는 10월 2일(금) 오후 정부대전청사에서 '중소기업 K-브랜드 지식재산 보호 협의체' 운영을 위한 착수 회의를 개최한다고 밝혔다. 최근 한류 열풍 등에 힘입어, K-뷰티, K-푸드, K-패션 등 K-브랜드",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784074",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "외교부",
+      "title": "외교부 공관장 인사 붙임 파일 참조.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784069",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "국가데이터처",
+      "title": "2026년 9월 소비자물가동향 □ 9월 소비자물가지수는 전월대비 0.3%, 전년동월대비 2.9% 각각 상승",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784075",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "식품의약품안전처",
+      "title": "식약처, 어린이집 식중독 예방을 위한 위생점검 실시 식약처, 어린이집 식중독 예방을 위한 위생점검 실시",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784068",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "식품의약품안전처",
+      "title": "식약처 소관 법률 개정안 국회 본회의 통과 식약처 소관 법률 개정안 국회 본회의 통과",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784067",
+      "unverified": false
+    },
     {
       "date": "2026-10-02",
       "agency": "문화체육관광부",
