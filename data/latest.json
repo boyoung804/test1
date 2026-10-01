@@ -1,6 +1,6 @@
 {
   "date": "2026-10-01",
-  "collected_at": "2026-10-01T15:26:19.249635+09:00",
+  "collected_at": "2026-10-01T15:51:47.264798+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-01",
+      "agency": "식품의약품안전처",
+      "title": "[보도참고] 정부-제약-의료·약업계",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783993",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-01",
+      "agency": "고용노동부",
+      "title": "안전보건공단, 한국ESG학회와",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783990",
+      "unverified": false
+    },
     {
       "date": "2026-10-01",
       "agency": "법제처",
