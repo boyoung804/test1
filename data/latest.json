@@ -1,6 +1,6 @@
 {
   "date": "2026-10-01",
-  "collected_at": "2026-10-01T09:28:48.295446+09:00",
+  "collected_at": "2026-10-01T09:53:46.026333+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-01",
+      "agency": "과학기술정보통신부",
+      "title": "다목적 SMR 상용 가속화를 위해 민관이 뭉친다 ​- 제1차관, 선박 동력원, 고온열공급 등 다목적 SMR 활용 길 넓히기 위해",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783874",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-01",
+      "agency": "기후에너지환경부",
+      "title": "메콩 지역 물 문제 해결을 위한 '제4차 한-메콩 국제 물포럼' 개최 ▷ 메콩 5개국 정부·대사, 국제기구, 개발협력파트너, 물기업 등 200여 명 참석▷ 한-메콩 물분야 협력 강화 및 국내 물기업 해외진출 발판 마련기후에너지환경부(장관 김성환)는 10월 1일 웨스틴조선호텔(서울 중구 소재)에서 '제4차 한-메콩 국제 물포럼(MKWF*)'를 개최한다고 밝혔",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783878",
+      "unverified": false
+    },
     {
       "date": "2026-10-01",
       "agency": "중소벤처기업부",
