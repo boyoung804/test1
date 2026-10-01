@@ -1,6 +1,6 @@
 {
   "date": "2026-10-02",
-  "collected_at": "2026-10-02T07:51:39.706021+09:00",
+  "collected_at": "2026-10-02T08:05:21.108516+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-02",
+      "agency": "문화체육관광부",
+      "title": "문학의 미래, 국민의 손으로... 문학진흥정책위원회 국민추천제 최초 도입 문학의 미래, 국민의 손으로... 문학진흥정책위원회 국민추천제 최초 도입 관련 보도자료 내용입니다. 자세한 사항은 붙임파일([1002]문체부보도자료-문학진흥정책위원회 국민추천제 실시.pdf)을 참고하시기 바랍니다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784066",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "문화체육관광부",
+      "title": "한글날 제정 100주년, '2026 한글주간'으로",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784065",
+      "unverified": false
+    },
     {
       "date": "2026-10-02",
       "agency": "과학기술정보통신부",
