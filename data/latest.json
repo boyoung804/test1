@@ -1,6 +1,6 @@
 {
   "date": "2026-10-02",
-  "collected_at": "2026-10-02T16:01:01.418752+09:00",
+  "collected_at": "2026-10-02T16:24:11.328239+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-02",
+      "agency": "해양수산부",
+      "title": "(참고) 후쿠시마 오염수 방류 대응 브리핑(335차, 서면) 오염수 방류 대응 전반- 브리퍼 : 국무조정실 김영수 국무1차장 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784202",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "농림축산식품부",
+      "title": "농식품부 장관, 동물보호의 날 기념 팝업스토어 찾아 '공감과 실천' 강조 농림축산식품부 장관은 10월 2일(금) 서울 성수동에서 열린 제2회 동물보호의 날 기념 '오늘은 1004' 팝업스토어 개막식에 참석하여 사람과 동물이 더불어 살아가는 사회를 위한 '공감과 실천'을 강조하였다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784201",
+      "unverified": false
+    },
     {
       "date": "2026-10-02",
       "agency": "외교부",
