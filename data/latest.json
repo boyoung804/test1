@@ -1,6 +1,6 @@
 {
   "date": "2026-10-02",
-  "collected_at": "2026-10-02T13:43:20.731336+09:00",
+  "collected_at": "2026-10-02T13:58:17.685263+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-02",
+      "agency": "국토교통부",
+      "title": "[참고] 제2용인-서울(용인~성남) 민자고속도로,",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784159",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-02",
+      "agency": "행정안전부",
+      "title": "8.28.~9.1. 호우 피해 복구에 총 154억 원 투입 - 사유시설 피해 재난지원금 34억 원, 공공시설 복구비 120억 원- 재난지원금 신속 지급과 복구사업 조기 추진으로 피해 주민 일상 회복 지원",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784154",
+      "unverified": false
+    },
     {
       "date": "2026-10-02",
       "agency": "재정경제부",
