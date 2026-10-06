@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "collected_at": "2026-10-06T11:02:57.555672+09:00",
+  "collected_at": "2026-10-06T11:23:51.781314+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,46 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-06",
+      "agency": "해양수산부",
+      "title": "아이디어 구상부터 모형시험까지, 청년이 직접 만드는 해양플랜트의 미래 아이디어 구상부터 모형시험까지, 청년이 직접 만드는 해양플랜트의 미래 - 제6회 해양플랜트 서비스산업 아이디어 경진대회, 10월 7일부터 참가팀 모집",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784367",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "해양수산부",
+      "title": "독도에서 찾은 미래 가치, 신종 해양생물 발견 및 항암 신소재 특허등록 독도에서 찾은 미래 가치, 신종 해양생물 발견 및 항암 신소재 특허등록 - 해수부, 독도와 주변 해역 해양조사·연구 성과 발표",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784366",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "해양수산부",
+      "title": "기업과 함께 해양환경 ESG 협력 넓힌다 기업과 함께 해양환경 ESG 협력 넓힌다 - 해양환경 ESG 간담회 10월 7일 개최, 기업 참여형 협력사업 발굴·논의",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784365",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "농림축산식품부",
+      "title": "농식품부 장관, 농지 전수조사 관련특별조치법 제정방향 토론회 참석 농림축산식품부(장관 송미령, 이하 '농식품부')는 10월 6일 화요일 국회의원회관에서 열린 ｢농지 특별조치법 제정방향 토론회｣에 송미령 장관이 참석하여 국회, 농업계, 학계 및 현장 전문가들과 함께 농지 전수조사 후속조치와 제도 개선방안을 논의하였다고 밝혔다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784364",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "농림축산식품부",
+      "title": "농식품부, 「일본 치바 농산업박람회」 한국관 운영… K-농기자재 수출시장 확대 나선다 농림축산식품부(장관 송미령, 이하 '농식품부')는 10월 7일부터 9일까지 일본 치바(도쿄 인근)에서 열리는 국제 농산업박람회에 한국관을 운영하며 한국의 우수한 K-농기자재를 집중 홍보하고 수출시장 개척에 나선다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784363",
+      "unverified": false
+    },
     {
       "date": "2026-10-06",
       "agency": "보건복지부",
