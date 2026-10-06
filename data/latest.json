@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "collected_at": "2026-10-06T10:33:40.666668+09:00",
+  "collected_at": "2026-10-06T10:49:34.779940+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-06",
+      "agency": "보건복지부",
+      "title": "요양병원 '인증'은 환자 안전의 기본, 미인증 기관에 대한 법적 조치 추진 요양병원 '인증'은 환자 안전의 기본, 미인증 기관에 대한 법적 조치 추진- 인증 신청·재신청 의무 미이행 요양병원(33개)에 대해 시정명령 등 엄정조치 -",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784358",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "보건복지부",
+      "title": "어르신 식탁 더 안전하고 건강하게 「장기요양기관 급식관리 기준」 마련 어르신 식탁 더 안전하고 건강하게 「장기요양기관 급식관리 기준」 마련",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784357",
+      "unverified": false
+    },
     {
       "date": "2026-10-06",
       "agency": "보건복지부",
