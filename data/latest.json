@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "collected_at": "2026-10-06T09:29:52.784845+09:00",
+  "collected_at": "2026-10-06T09:55:09.658021+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,22 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-06",
+      "agency": "고용노동부",
+      "title": "국가전문자격 시험문제지·최종정답 출처표시로 자유롭게 활용하세요! - 37개 국가전문자격 시험자료에 공공누리 제1유형·인공지능(AI) 유형 병행 적용- Q-Net에 이어 공공누리 사이트에도 등재, 민간 교육콘텐츠·인공지능(AI) 활용 확대 기대 한국산업인력공단(이사장 이병훈, 이하 '공단')은 지난 4월부터 37개 국가전문자격에 대해서 시험문제지와 최종정답에",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784346",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "고용노동부",
+      "title": "건설근로자공제회,",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784345",
+      "unverified": false
+    },
     {
       "date": "2026-10-06",
       "agency": "중소벤처기업부",
