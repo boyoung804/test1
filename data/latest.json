@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "collected_at": "2026-10-06T11:59:19.884110+09:00",
+  "collected_at": "2026-10-06T12:20:50.626129+09:00",
   "agencies": [
     "대통령실",
     "국무조정실",
@@ -29,6 +29,54 @@
     "식품의약품안전처"
   ],
   "items": [
+    {
+      "date": "2026-10-06",
+      "agency": "행정안전부",
+      "title": "과학으로 다시 이어진 가족",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784380",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "행정안전부",
+      "title": "행정·공공기관의 합리적 클라우드 선정 지원을 위한 클라우드서비스 제공기업(CSP) 서비스 설명회 개최 - 공공부문 클라우드 정책방향, 민간 클라우드 선정 시 고려사항 등 안내- 클라우드서비스 제공기업(CSP)별 기술상담존 운영 등 수요기관의 선택권 강화",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784378",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "교육부",
+      "title": "재외동포 어린이, 그림일기로 한국어 실력을 선보이다 재외동포 어린이, 그림일기로 한국어 실력을 선보이다",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784376",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "교육부",
+      "title": "'꿈을 향한 장애학생들의 도전과 희망' 2026년 전국 장애학생 직업기능 경진대회 개최 '꿈을 향한 장애학생들의 도전과 희망' 2026년 전국 장애학생 직업기능 경진대회 개최",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784375",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "기후에너지환경부",
+      "title": "겨울철새 남하 시작… 조류인플루엔자 유입 차단 총력 ▷ 주요 철새도래지 오리류 2.9배 증가, 해외 고병원성 조류인플루엔자(AI) 검출도 2배 이상 늘어▷ 10월 본격 도래 대비, 철새예찰부터 농장방역까지 선제적 대응 강화기후에너지환경부(장관 김성환)와 농림축산식품부(장관 송미령)는 겨울철새의 국내 도래가 시작되고, 해외 야생조류에서도 고병원성 조류인플루엔",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784374",
+      "unverified": false
+    },
+    {
+      "date": "2026-10-06",
+      "agency": "농림축산식품부",
+      "title": "겨울철새 남하 시작...10월 중하순 본격 도래 전망 농림축산식품부(장관 송미령)와 기후에너지환경부(장관 김성환)는 겨울철새의 국내도래가 시작되고, 해외 야생조류에서도 고병원성 조류인플루엔자(AI) 검출이 증가함에 따라 국내 유입·확산에 대비하여 선제적 방역대응을 강화한다.",
+      "summary": "",
+      "link": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156784373",
+      "unverified": false
+    },
     {
       "date": "2026-10-06",
       "agency": "보건복지부",
